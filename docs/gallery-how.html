@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>How it works</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 34px 40px;
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #ffffff; color: #1a1a1a;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+  .kicker {
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    color: #10b981; font-weight: 700; margin-bottom: 8px;
+  }
+  h1 { font-size: 29px; margin: 0 0 7px; letter-spacing: -0.5px; }
+  .sub { font-size: 15px; color: #555; margin-bottom: 26px; }
+  .steps { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 24px; }
+  .step {
+    border: 1px solid #e5e7eb; border-radius: 10px; padding: 18px 20px;
+    background: #fafafa; position: relative;
+  }
+  .step .n {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: #10b981; color: #fff; font-size: 15px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; margin-bottom: 10px;
+  }
+  .step h2 { font-size: 17px; margin: 0 0 6px; letter-spacing: -0.2px; }
+  .step p { font-size: 13.5px; color: #666; margin: 0; line-height: 1.6; }
+  .flow {
+    border: 1px solid #e5e7eb; border-radius: 10px; padding: 18px 20px;
+    background: #fafafa; margin-bottom: 20px;
+  }
+  .flow .label {
+    font-size: 11.5px; letter-spacing: 1.4px; text-transform: uppercase;
+    color: #0f766e; font-weight: 700; margin-bottom: 12px;
+  }
+  .chain { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .pill {
+    background: #fff; border: 1px solid #d7ddd9; border-radius: 999px;
+    padding: 8px 15px; font-size: 13.5px; font-weight: 600; color: #1a1a1a;
+  }
+  .pill.on { background: #10b981; border-color: #10b981; color: #fff; }
+  .arrow { color: #9aa4a0; font-size: 15px; }
+  .note { background: #f0fdf4; border-left: 3px solid #10b981; padding: 14px 16px;
+          border-radius: 0 6px 6px 0; font-size: 13.5px; color: #14532d; line-height: 1.65; }
+  .foot { margin-top: 16px; font-size: 13px; color: #666; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">How it works</div>
+  <h1>From URL to clean spreadsheet in four steps</h1>
+  <div class="sub">You stay in the loop before the full run, so there are no surprises at delivery.</div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="n">1</div>
+      <h2>You send the URL</h2>
+      <p>The listing or category page you want, plus the columns you need. I reply with a short plan and quote.</p>
+    </div>
+    <div class="step">
+      <div class="n">2</div>
+      <h2>I check the structure</h2>
+      <p>I look at the page layout and confirm which fields exist and how many rows the page yields.</p>
+    </div>
+    <div class="step">
+      <div class="n">3</div>
+      <h2>You approve a sample</h2>
+      <p>Before the full run you get a small sample extract to confirm the columns are right.</p>
+    </div>
+    <div class="step">
+      <div class="n">4</div>
+      <h2>I deliver the file</h2>
+      <p>A clean CSV and a Google Sheet link, with one revision included if anything needs adjusting.</p>
+    </div>
+  </div>
+
+  <div class="flow">
+    <div class="label">Your data pipeline</div>
+    <div class="chain">
+      <span class="pill">Listing page</span><span class="arrow">&rarr;</span>
+      <span class="pill">Parsed rows</span><span class="arrow">&rarr;</span>
+      <span class="pill">Deduplicated</span><span class="arrow">&rarr;</span>
+      <span class="pill">Formatted</span><span class="arrow">&rarr;</span>
+      <span class="pill on">CSV + Google Sheet</span>
+    </div>
+  </div>
+
+  <div class="note">
+    Public pages only. About 1 request per second, robots.txt respected. Business and company records only - no personal data about individuals.
+  </div>
+  <div class="foot">Tools only - no investment advice, no profit claims.</div>
+</div>
+</body>
+</html>
