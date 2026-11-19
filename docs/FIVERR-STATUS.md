@@ -1,9 +1,13 @@
-# Fiverr Gig — Status (updated 2026-11-19 ~20:30)
+# Fiverr Gig — **PUBLISHED** (19/11/2026 ~21:55 GMT+7)
 
 Seller: `@btc207` (Vietnam, New seller, profile strength 8/12)
 Gig slug: `scrape-public-website-data-into-a-clean-csv-or-google-sheet-in-24-hours`
 Gig ID (internal): `516464038`
-Store URL (not published yet): the gig sits in **DRAFT** on the dashboard.
+
+**Live URL: https://www.fiverr.com/btc207/scrape-public-website-data-into-a-clean-csv-or-google-sheet-in-24-hours**
+Short share code: `Q2rK5k3` → `fiverr.com/s/Q2rK5k3`
+Status: **ACTIVE** on `/users/btc207/manage_gigs` (verified after reload).
+Publish response: `{"code":200,"gig_status":"approved"}`.
 
 ## What is persisted server-side (verified by page reload)
 
@@ -52,37 +56,32 @@ Never reload right after editing — the reload re-triggers PX and throws the ed
 A minimal FormData (hand-built) returns **500 `server_error`**; only the full form
 works.
 
-## What blocks PUBLISH
+## What the publish gate needed
 
-Publish tab says: *"To publish your services on Fiverr, you must complete all your
-verification and profile requirements."*
+The Publish tab only offered a **"Publish Gig"** button after both of these:
 
-Seller dashboard lists the blocking task: **3. ID verification** → `/verification/user`.
+1. **ID verification** (Persona) — done by Sếp; the page now reads
+   *"Your identity has been verified"*.
+2. **Form W-9** — `https://www.fiverr.com/earnings/financial-docs?w9_profile=true`.
+   It asks one question: *"Are you a U.S. person?"* → radio
+   `input[name=us-citizen][value=non_us]` = **No** (seller is Vietnam, services performed
+   outside the US). Answering "No" completes the check without filing a W-9.
 
-Fiverr runs identity checks through **Persona** (external KYC partner). Steps:
-
-1. ✅ How do you plan to use Fiverr → selected **"Outside of my primary job or profession"**
-   (`[data-track-tag=choice_group_item][data-track-value=not_trader]`, `aria-selected=true`)
-2. ⏳ **Verify your phone number** — Country = Vietnam, prefix `+84`, needs a real number that receives an SMS code
-3. ⏳ **Add your security question**
-4. ⏳ **Upload your ID** — Persona flow (government ID + selfie)
-
-Steps 2–4 require Sếp's real data (phone number that receives SMS, security question
-answer, identity document). **Hermes must not guess, fabricate or enter these.**
-
-Other dashboard items (not hard blockers): Trust & Safety training (optional),
-Form W-9 (US freelancers only), profile strength 8/12 → "Showcase portfolio",
-"Create an intro video", "List certifications" to reach 12/12.
-
-The gig itself is **created** (internal id `516464038`) and sits in **DRAFT** on
-`/users/btc207/manage_gigs`. Every tab is persisted; only the final publish click is
-gated behind the KYC above.
+Publishing itself is a GET to `…/manage_gigs/<slug>/publish` and returns
+`{"code":200,"gig_status":"approved"}` — capture it by hooking `fetch`/`XHR` before
+clicking, because the UI shows no success banner.
 
 ## Pricing model
 
 Sell price = $30 / $100 / $250. That maps to the standing offer
 **400.000đ / 1.000 dòng**, delivered in 24h (Basic is 3 days for 100 rows — the
 per-1.000-row price only holds at Standard/Premium volume).
+
+Public-page JSON (fetched without credentials) confirms the three packages:
+`"price":3000 / 10000 / 25000`, `duration` 72 / 96 / 120 h, revisions 1 / 2 / 3.
+
+The `$150 / $500 / $800 / $1000 / $1200` figures that also appear in the page HTML are
+Fiverr's *suggested* prices for buyers, not the three package prices.
 
 ## Compliance text baked into every asset
 
