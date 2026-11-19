@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tran Xuan Duy - CV</title>
+<style>
+  @page { size: A4; margin: 16mm 14mm; }
+  body { font: 10.5pt/1.45 "Segoe UI", Arial, sans-serif; color: #111; margin: 0; }
+  h1 { font-size: 20pt; margin: 0 0 2mm; letter-spacing: -.3px; }
+  .role { font-size: 11.5pt; color: #2f6fdb; font-weight: 600; margin-bottom: 3mm; }
+  .contact { font-size: 9.5pt; color: #444; margin-bottom: 6mm; }
+  h2 { font-size: 11pt; text-transform: uppercase; letter-spacing: .6px; border-bottom: 1px solid #ccc;
+       padding-bottom: 1.5mm; margin: 6mm 0 3mm; }
+  p, li { margin: 0 0 2mm; }
+  ul { margin: 0 0 3mm 5mm; padding: 0; }
+  .job { margin-bottom: 3.5mm; }
+  .job .t { font-weight: 700; }
+  .job .m { font-size: 9.5pt; color: #555; }
+  .cols { display: flex; gap: 8mm; }
+  .cols > div { flex: 1; }
+  .kv { font-size: 9.8pt; }
+</style>
+</head>
+<body>
+  <h1>Tran Xuan Duy</h1>
+  <div class="role">Python Scraping &amp; Automation Engineer</div>
+  <div class="contact">
+    Hanoi, Vietnam &nbsp;·&nbsp; attong39@gmail.com &nbsp;·&nbsp;
+    github.com/xegheplimo-web/automation-demos &nbsp;·&nbsp;
+    apify.com/xegheplimo
+  </div>
+
+  <h2>Summary</h2>
+  <p>
+    Automation engineer building Python data-extraction and workflow tools: public listing scrapers,
+    business-directory harvesters, recurring CSV/Google Sheet exports, Playwright browser automation and
+    small monitoring dashboards. I deliver a re-runnable script plus clean output, usually within 24 hours
+    for datasets under 5,000 rows.
+  </p>
+
+  <h2>Core skills</h2>
+  <div class="cols">
+    <div class="kv">
+      <p><b>Languages:</b> Python 3, JavaScript, Bash, SQL</p>
+      <p><b>Scraping:</b> Playwright, requests, BeautifulSoup, lxml, robots.txt compliance, rate limiting, retries</p>
+      <p><b>Data:</b> pandas, CSV/Excel, Google Sheets API, SQLite, data cleaning &amp; deduplication</p>
+    </div>
+    <div class="kv">
+      <p><b>Automation:</b> cron/scheduled jobs, headless Chrome via CDP, Telegram/Gmail notifications</p>
+      <p><b>APIs:</b> REST, Apify platform (published Actor), GitHub Actions</p>
+      <p><b>Ops:</b> Windows/Linux, venv, Docker basics, logging &amp; error handling</p>
+    </div>
+  </div>
+
+  <h2>Selected work</h2>
+  <div class="job">
+    <div class="t">Polite listing scraper — published Apify Actor</div>
+    <div class="m">apify.com/xegheplimo/polite-listing-scraper</div>
+    <p>Public Actor that extracts listing rows (title, price, URL, source, timestamp) into JSON/CSV.
+       Respects robots.txt, 1s delay, 3 retries, output schema with CSV download link.</p>
+  </div>
+  <div class="job">
+    <div class="t">automation-demos — scraping &amp; automation reference repo</div>
+    <div class="m">github.com/xegheplimo-web/automation-demos</div>
+    <p>Working demos: 3 pages / 60 rows scraped in 5.5s, CSV export, automated tests, Binance Futures
+       testnet bot skeleton, Playwright login/click flows.</p>
+  </div>
+  <div class="job">
+    <div class="t">Business directory harvesting (Vietnam)</div>
+    <div class="m">Freelance engagement</div>
+    <p>Collected and de-duplicated 446 verified business contacts (company, website, email, phone, address,
+       industry) from public directories, delivered as UTF-8 CSV with a reusable script.</p>
+  </div>
+
+  <h2>Education &amp; certifications</h2>
+  <ul>
+    <li>Self-taught software engineering; continuous practice via public repos and published tools.</li>
+    <li>Focus areas: web automation reliability, data quality, compliant scraping.</li>
+  </ul>
+
+  <h2>Working style</h2>
+  <p>
+    Free 20-row sample from the client's target page within 1 hour. Fixed price per dataset, delivery in CSV
+    or Google Sheet, revisions until the columns match the spec. Business/public data only — no personal
+    data, no login walls, no captcha bypassing. Tools only — no investment advice, no profit claims.
+  </p>
+</body>
+</html>
