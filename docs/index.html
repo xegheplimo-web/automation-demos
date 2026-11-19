@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cào dữ liệu & tool tự động hoá — giao trong 24 giờ</title>
+<meta name="description" content="Cào dữ liệu doanh nghiệp công khai ra CSV/Google Sheet trong 24 giờ. Tool Python/Playwright theo yêu cầu. Mẫu miễn phí 20 dòng trong 1 giờ.">
+<style>
+  :root{
+    --bg:#0b0f14; --card:#111821; --line:#1f2b38; --text:#e6edf3; --muted:#8b9bb0;
+    --accent:#2f81f7; --ok:#2ea043;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+  .wrap{max-width:860px; margin:0 auto; padding:48px 20px 72px}
+  .badge{display:inline-block; font-size:13px; color:var(--ok); border:1px solid #1c3a26; background:#0e1f15; padding:4px 10px; border-radius:999px; margin-bottom:18px}
+  h1{font-size:34px; line-height:1.25; margin:0 0 12px; letter-spacing:-.02em}
+  h1 span{color:var(--accent)}
+  .lead{color:var(--muted); font-size:17px; margin:0 0 28px}
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin:28px 0}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px}
+  .card h3{margin:0 0 6px; font-size:16px}
+  .price{font-size:22px; font-weight:700; margin:8px 0 4px}
+  .card p{color:var(--muted); font-size:14px; margin:0}
+  h2{font-size:20px; margin:36px 0 12px}
+  ol,ul{margin:0 0 0 20px; padding:0}
+  li{margin:6px 0; color:var(--muted)}
+  li b{color:var(--text)}
+  .cta{display:inline-block; margin-top:8px; background:var(--accent); color:#fff; text-decoration:none;
+       padding:13px 22px; border-radius:10px; font-weight:600}
+  .cta.sec{background:transparent; border:1px solid var(--line); color:var(--text); margin-left:8px}
+  .note{margin-top:36px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:13px}
+  code{background:#0e1620; border:1px solid var(--line); padding:1px 5px; border-radius:5px; font-size:13px}
+  a{color:var(--accent)}
+  @media (max-width:520px){ h1{font-size:26px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="badge">Nhận việc hôm nay · giao trong 24 giờ</div>
+
+  <h1>Cào dữ liệu &amp; tool tự động hoá<br><span>theo yêu cầu — tính theo dòng, không tính theo giờ</span></h1>
+  <p class="lead">
+    Bạn đưa danh sách URL (hoặc một trang danh bạ / sàn / website) và các cột cần lấy.
+    Trong <b>1 giờ</b> tôi gửi mẫu <b>20 dòng</b> miễn phí. Bạn duyệt xong, tôi giao đủ
+    <b>CSV hoặc Google Sheet</b> trong 24 giờ.
+  </p>
+
+  <a class="cta" href="mailto:attong39@gmail.com?subject=Y%C3%AAu%20c%E1%BA%A7u%20c%C3%A0o%20d%E1%BB%AF%20li%E1%BB%87u%20-%20c%E1%BA%A7n%20m%E1%BA%ABu%2020%20d%C3%B2ng&body=Link%20trang%20c%E1%BA%A7n%20l%E1%BA%A5y%3A%0AC%C3%A1c%20c%E1%BB%99t%20c%E1%BA%A7n%20c%C3%B3%3A%0AS%E1%BB%91%20d%C3%B2ng%20d%E1%BB%B1%20ki%E1%BA%BFn%3A%0ATh%E1%BB%9Di%20h%E1%BA%A1n%3A%0A">Nhận mẫu 20 dòng miễn phí</a>
+  <a class="cta sec" href="https://github.com/xegheplimo-web/automation-demos" target="_blank" rel="noopener">Xem code demo</a>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Cào dữ liệu doanh nghiệp</h3>
+      <div class="price">400.000đ <span style="font-size:14px;color:var(--muted);font-weight:400">/ 1.000 dòng</span></div>
+      <p>Tên công ty, website, email, điện thoại, địa chỉ, ngành. Giao trong 24h. Từ 5.000 dòng báo giá riêng.</p>
+    </div>
+    <div class="card">
+      <h3>Bot Binance Futures</h3>
+      <div class="price">500.000đ</div>
+      <p>Code Python + hướng dẫn chạy, chế độ testnet trước, chạy 2–3 ngày là xong. Không giữ tiền của bạn.</p>
+    </div>
+    <div class="card">
+      <h3>Tool Playwright / dashboard</h3>
+      <div class="price">Báo giá</div>
+      <p>Tự động đăng tin, thu thập dữ liệu định kỳ, dashboard theo dõi. Thường 3–7 ngày.</p>
+    </div>
+  </div>
+
+  <h2>Cách làm việc</h2>
+  <ol>
+    <li><b>Gửi yêu cầu</b> — link trang cần lấy + cột dữ liệu + số dòng (email hoặc Zalo).</li>
+    <li><b>Nhận mẫu 20 dòng</b> trong 1 giờ, miễn phí, để kiểm tra đúng dữ liệu bạn cần.</li>
+    <li><b>Duyệt mẫu</b> → cọc 50% (hoặc trả sau khi nhận đủ với đơn dưới 500.000đ).</li>
+    <li><b>Nhận file đủ</b> trong 24 giờ (CSV, Excel hoặc Google Sheet), kèm script nếu bạn muốn tự chạy lại.</li>
+  </ol>
+
+  <h2>Cam kết</h2>
+  <ul>
+    <li>Chỉ lấy <b>dữ liệu doanh nghiệp công khai</b> (tên, website, điện thoại, địa chỉ, giá, tồn kho).</li>
+    <li><b>Không</b> thu thập dữ liệu cá nhân, không vượt đăng nhập, không phá captcha.</li>
+    <li>Tôn trọng <code>robots.txt</code>, giãn cách 1 giây/request — site không bị quá tải.</li>
+    <li>Sai dữ liệu → sửa lại hoặc hoàn tiền trong 48 giờ.</li>
+  </ul>
+
+  <h2>Liên hệ</h2>
+  <p class="lead" style="margin-bottom:10px">
+    Email: <a href="mailto:attong39@gmail.com">attong39@gmail.com</a><br>
+    Code mẫu: <a href="https://github.com/xegheplimo-web/automation-demos" target="_blank" rel="noopener">github.com/xegheplimo-web/automation-demos</a><br>
+    Actor công khai: <a href="https://apify.com/xegheplimo/polite-listing-scraper" target="_blank" rel="noopener">apify.com/xegheplimo/polite-listing-scraper</a>
+  </p>
+
+  <div class="note">
+    Bán tool phần mềm — không tư vấn đầu tư, không cam kết lợi nhuận.<br>
+    Tools only — no investment advice, no profit claims.
+  </div>
+</div>
+</body>
+</html>
