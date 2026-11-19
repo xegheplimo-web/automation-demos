@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Scraper safety defaults</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 32px 40px;
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #ffffff; color: #1a1a1a;
+  }
+  .wrap { max-width: 1090px; margin: 0 auto; }
+  .kicker {
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    color: #059669; font-weight: 700; margin-bottom: 8px;
+  }
+  h1 { font-size: 28px; margin: 0 0 6px; letter-spacing: -0.5px; }
+  .sub { font-size: 15px; color: #555; margin-bottom: 22px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+  .card {
+    border: 1px solid #e3e9ef; border-radius: 10px; padding: 16px 18px;
+    background: #f8fafc;
+  }
+  .card .label {
+    font-size: 11px; letter-spacing: 1.3px; text-transform: uppercase;
+    color: #047857; font-weight: 700; margin-bottom: 9px;
+  }
+  .card .body { font-size: 13px; color: #334155; line-height: 1.55; }
+  .card .body b { color: #0f172a; }
+  pre {
+    margin: 0 0 20px; background: #0f172a; color: #e2e8f0; border-radius: 9px;
+    padding: 15px 17px; font-size: 12.5px; line-height: 1.85;
+    font-family: "SF Mono", Consolas, Menlo, monospace; overflow: hidden;
+  }
+  pre .c { color: #64748b; }
+  pre .k { color: #7dd3fc; }
+  pre .s { color: #86efac; }
+  .foot {
+    border-top: 1px solid #e5e7eb; padding-top: 12px; font-size: 12px;
+    color: #64748b; line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">Safety by default</div>
+  <h1>Built to stay inside the rules</h1>
+  <div class="sub">Every scraper I write ships with these limits on. You can read them in the config file.</div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="label">Robots.txt</div>
+      <div class="body"><b>Checked before the first request.</b> If the site disallows the path, the run stops and says so. It does not try to work around it.</div>
+    </div>
+    <div class="card">
+      <div class="label">Rate limit</div>
+      <div class="body"><b>About 1 request per second</b> by default, with jitter. Configurable, but the default is the polite one.</div>
+    </div>
+    <div class="card">
+      <div class="label">Retries</div>
+      <div class="body"><b>Backoff on 429 and 5xx only.</b> A 403 is treated as a stop signal, not something to hammer through.</div>
+    </div>
+    <div class="card">
+      <div class="label">Scope</div>
+      <div class="body"><b>Public business listings only.</b> No login walls, no CAPTCHA solving, no personal data about individuals.</div>
+    </div>
+  </div>
+
+  <pre><span class="c"># config.yaml - the limits are visible, not hidden in code</span>
+<span class="k">request_delay</span>: <span class="s">1.0</span>          <span class="c"># seconds between requests</span>
+<span class="k">respect_robots_txt</span>: <span class="s">true</span>     <span class="c"># stop when the site says no</span>
+<span class="k">max_retries</span>: <span class="s">3</span>            <span class="c"># only for 429 / 5xx</span>
+<span class="k">retry_backoff</span>: <span class="s">2.0</span>         <span class="c"># exponential</span>
+<span class="k">max_pages</span>: <span class="s">50</span>
+<span class="k">on_parse_error</span>: <span class="s">"log_and_skip"</span>   <span class="c"># never silently drop a page</span>
+<span class="k">user_agent</span>: <span class="s">"MyScraper/1.0 (+contact)"</span></pre>
+
+  <div class="foot">
+    Public listing data only. About 1 request per second, robots.txt respected.<br>
+    Business and company records only - no personal data about individuals.
+  </div>
+</div>
+</body>
+</html>

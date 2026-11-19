@@ -5,14 +5,59 @@ Gig slug: `build-a-binance-futures-trading-bot-with-sl-and-tp-protection`
 Share code: `9dGyP4d` → `https://www.fiverr.com/s/9dGyP4d`
 Publish response: `{"code":200,"gig_status":"approved"}` (GET `…/manage_gigs/<slug>/publish`)
 
-## Status: DENIED by Fiverr review (19/11/2026 ~23:40 GMT+7)
+## Status: DENIED — "Prohibited service" (19/11/2026)
 
-After publish, `/users/btc207/manage_gigs` showed the banner:
+### Confirmed reason (from the Fiverr email, read 19/11 ~23:55)
 
-> Your Gig "build a binance futures trading bot with sl and tp protection" was removed
-> The Gig failed to pass our review and is not visible to anyone.
+Fiverr email *"Your Gig was removed from Fiverr"* (sent 22:52, Gmail u/1 = attong39@gmail.com):
 
-The gig is **not visible** to buyers. Gig #1 (scraping) is unaffected and still ACTIVE.
+| Field | Value |
+|---|---|
+| Reason | **Dịch vụ bị cấm** (Prohibited service) |
+| Content creation date | 19 Nov 2026 |
+| Basis | Fiverr's own initiative (**Sáng kiến tự nguyện của chúng tôi**) |
+| Detection | **Automatic** |
+| Removal | **Automatic** |
+| Account type | Personal account |
+| Legal scope | **Global** |
+| Restriction duration | **Permanent (Vĩnh viễn)** |
+
+The restriction applies to **the gig**, not the account. The email explicitly says:
+*"Bạn hoàn toàn có thể tạo một Gig mới phù hợp với chính sách của chúng tôi"* — you can still
+create a new policy-compliant gig. Gig #1 (scraping) verified `status: "approved"` after the
+removal, and the account is intact.
+
+### Why — matching policy text
+
+Fiverr Community Standards → *"Services that can pose financial risks for our users"*:
+
+> **Do not** offer, agree to provide, or ask for the services that require getting access to
+> other user's sensitive financial information, such as:
+> - Opening, managing, or implementing changes in a financial account of any kind
+> - Providing a loan, buying or selling currency or cryptocurrency, or trading binary
+>   options, or any other financial instruments
+> - **Trading signals, indicators, or pre-made trading strategies**
+
+The gig's core deliverable — *place a market entry and attach SL/TP orders on the buyer's
+Binance futures account* — is exactly "opening, managing, or implementing changes in a
+financial account of any kind". `bot/order_bot.py` cannot be re-listed as-is: its whole
+purpose is placing orders on a live exchange account.
+
+Also relevant: *"Promising financial or personal benefits"* — any promise of returns or a
+profit rate not in the seller's control. The disclaimer in the description does **not**
+override the service type; Fiverr reviews the **service**, not the wording.
+
+Fiverr's own community forum has multiple reports of exactly this outcome — crypto/forex
+trading-bot gigs removed and sellers warned or suspended. Category presence in the catalog
+(Trading Bots Development has 1,500+ live gigs) is **not** a guarantee: enforcement is
+applied to individual gigs, and new sellers get flagged faster.
+
+### Decision
+
+**Do not re-file a trading-bot gig.** The service itself is the prohibited part — a
+refresher (different title, category, or wording) would be an attempt to evade a
+deterministic policy enforcement, which risks account suspension for
+*"repetitive violations"*. Gig #1 stays untouched and stays the revenue bet.
 
 ### Verified persisted state (read back after reload before publish)
 

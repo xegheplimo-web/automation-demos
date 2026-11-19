@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Scraper pipeline</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 32px 40px;
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #ffffff; color: #1a1a1a;
+  }
+  .wrap { max-width: 1090px; margin: 0 auto; }
+  .kicker {
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    color: #2563eb; font-weight: 700; margin-bottom: 8px;
+  }
+  h1 { font-size: 28px; margin: 0 0 6px; letter-spacing: -0.5px; }
+  .sub { font-size: 15px; color: #555; margin-bottom: 22px; }
+  .flow { display: flex; align-items: stretch; gap: 8px; margin-bottom: 22px; }
+  .step {
+    flex: 1; border: 1px solid #dfe5ee; border-radius: 10px; padding: 14px 12px;
+    background: #f8fafc; text-align: center;
+  }
+  .step .n {
+    width: 22px; height: 22px; border-radius: 50%; background: #2563eb; color: #fff;
+    font-size: 12px; font-weight: 700; margin: 0 auto 8px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .step .t { font-size: 13.5px; font-weight: 700; margin-bottom: 4px; }
+  .step .d { font-size: 11.5px; color: #64748b; line-height: 1.45; }
+  .arrow { align-self: center; color: #94a3b8; font-size: 15px; }
+  h2 { font-size: 14px; letter-spacing: 1.2px; text-transform: uppercase; color: #475569; margin: 0 0 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-bottom: 18px; }
+  th {
+    text-align: left; background: #1e293b; color: #fff; padding: 8px 10px;
+    font-weight: 600; font-size: 12px;
+  }
+  td { padding: 7px 10px; border-bottom: 1px solid #eef2f7; color: #334155; }
+  tr:nth-child(even) td { background: #f8fafc; }
+  .out { display: flex; gap: 8px; margin-bottom: 16px; }
+  .tag {
+    border: 1px solid #dfe5ee; border-radius: 999px; padding: 6px 13px;
+    font-size: 12px; font-weight: 600; background: #fff; color: #334155;
+  }
+  .tag.on { background: #2563eb; border-color: #2563eb; color: #fff; }
+  .foot {
+    border-top: 1px solid #e5e7eb; padding-top: 12px; font-size: 12px;
+    color: #64748b; line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">Python web scraper</div>
+  <h1>One script, clean files out</h1>
+  <div class="sub">You name the pages and the columns. I hand back a runnable script plus the sample output.</div>
+
+  <div class="flow">
+    <div class="step"><div class="n">1</div><div class="t">Fetch</div><div class="d">Public pages only<br>1 request / second</div></div>
+    <div class="arrow">&#9654;</div>
+    <div class="step"><div class="n">2</div><div class="t">Parse</div><div class="d">One selector per field<br>Layout logged, not skipped</div></div>
+    <div class="arrow">&#9654;</div>
+    <div class="step"><div class="n">3</div><div class="t">Clean</div><div class="d">Trim, normalise<br>Drop empty rows</div></div>
+    <div class="arrow">&#9654;</div>
+    <div class="step"><div class="n">4</div><div class="t">Export</div><div class="d">CSV + JSON<br>Optional Sheets push</div></div>
+  </div>
+
+  <h2>Sample output</h2>
+  <table>
+    <tr><th>title</th><th>price</th><th>availability</th><th>rating</th><th>link</th></tr>
+    <tr><td>Starter web hosting plan</td><td>4.50</td><td>in stock</td><td>4.6</td><td>/hosting/starter</td></tr>
+    <tr><td>Business hosting plan</td><td>9.90</td><td>in stock</td><td>4.4</td><td>/hosting/business</td></tr>
+    <tr><td>Agency hosting plan</td><td>21.00</td><td>on request</td><td>4.8</td><td>/hosting/agency</td></tr>
+    <tr><td>Dedicated server plan</td><td>64.00</td><td>in stock</td><td>4.7</td><td>/hosting/dedicated</td></tr>
+    <tr><td>Cloud backup plan</td><td>12.25</td><td>in stock</td><td>4.2</td><td>/hosting/backup</td></tr>
+  </table>
+
+  <div class="out">
+    <div class="tag on">rows.csv</div>
+    <div class="tag">rows.json</div>
+    <div class="tag">config.yaml</div>
+    <div class="tag">README.md</div>
+    <div class="tag">tests/</div>
+  </div>
+
+  <div class="foot">
+    Public listing data only. About 1 request per second, robots.txt respected.<br>
+    Business and company records only - no personal data about individuals.
+  </div>
+</div>
+</body>
+</html>
