@@ -7,6 +7,21 @@ per-site adapters in `sites/`.
 
 Public demo source: github.com/xegheplimo-web/scrape-demo
 
+## Dịch vụ (nhận làm theo yêu cầu)
+
+| Việc | Giá | Thời gian |
+|---|---|---|
+| Cào dữ liệu web → CSV/Excel/Google Sheet | 400.000đ / 1.000 dòng | 24 giờ |
+| Bot Binance Futures (SL/TP, log lệnh, cảnh báo Telegram) | 500.000đ | 2–3 ngày |
+| Tool trình duyệt (Playwright/CDP), dashboard, webhook | báo giá theo việc | 3–7 ngày |
+
+Cách làm: báo giá trước → **demo trước khi trả tiền** → bàn giao source + hướng dẫn, bảo hành 7 ngày.
+
+Đặt hàng: [vLance — gói dịch vụ 1555](https://www.vlance.vn/goi-dich-vu/viet-tool-python-theo-yeu-cau-cao-du-lieu-bot-binance-futures) · [LinkedIn](https://www.linkedin.com/in/tran-xuan-duy-0a18a5406/)
+
+> Mình bán tool (phần mềm) — không tư vấn đầu tư, không cam kết lợi nhuận. / Tools only — no investment advice, no profit claims.
+
+
 ## What it does
 
 - Fetches listing pages with a clear `User-Agent`, 1s delay between requests,
