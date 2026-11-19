@@ -67,7 +67,7 @@ FAQ list:
 
 - `gigs/...0f61c680...` → `gallery-scraper.png` (pipeline + CSV sample table)
 - `gigs2/...11ccf629...` → `gallery-safety.png` (robots.txt, 1 req/s, retries, config)
-- `gigs3/...20d25cde...` → `gallery-run.png` (terminal output + out/data.csv)
+- `gigs3/...9a258d40...` → `gallery-run.png` (terminal output + out/data.csv)
 
 All three verified by fetching the originals (HTTP 200) and reading them with vision.
 The CV PDF did **not** upload on this gig — the `#pdf` file input is re-created by React
@@ -82,9 +82,11 @@ after the first image upload and the CV is optional.
 
 ## Known gap
 
-`gallery-run.png` shows `42 + 38` parsed rows minus `3 + 1` dropped = 76, but the export
-line says `79 rows`. The numbers do not add up in the artwork. Fix the HTML and re-render
-before the listing gets traffic — a buyer who counts will notice.
+Resolved. `gallery-run.png` originally showed `42 + 38` parsed minus `3 + 1` dropped = 76
+while the export line said `79 rows`. The artwork was re-rendered with `parse 44 items`
+and `clean 0 rows dropped` (44 + 38 − 3 = 79), the old image was deleted from the gig,
+and the corrected one was uploaded as `gigs3/...9a258d40...`. Verified by fetching the
+server copy and reading it with vision.
 
 ## Status of the other gig
 
